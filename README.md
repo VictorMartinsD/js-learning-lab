@@ -18,13 +18,15 @@ Diferente de apenas copiar códigos, utilizo um sistema de **Repetição Espaça
 
 ## 📂 Estrutura do Repositório
 
-A organização do repositório é modular e segue a ordem cronológica dos meus estudos dentro da pasta `.aulas`. Cada diretório interno é numerado e nomeado conforme o tema abordado (ex: `.aulas/01-logica`, `.aulas/02-funcoes`), permitindo que a própria lista de arquivos sirva como o índice de conhecimentos adquiridos.
+A organização do repositório é modular e segue a ordem cronológica dos meus estudos dentro da pasta `.aulas`. Cada diretório interno e exercício é numerado e nomeado conforme o tema abordado (ex: `.aulas/01-condicionais.../01-if-else`), permitindo que a própria lista de arquivos sirva como o índice de conhecimentos adquiridos.
 
 ---
 
 ## 🛠️ Como utilizo este Lab
 
-Sempre que inicio um novo tema, utilizo a pasta `.aulas/00-template` para gerar a estrutura base do exercício. Se eu cometo um erro de sintaxe ou lógica, eu anoto o erro no Notion antes de aplicar a correção aqui. Isso garante que eu não apenas corrija o código, mas aprenda com a falha para evitar repetições.
+Sempre que inicio um novo tema, utilizo a pasta `.aulas/00-template` para gerar a estrutura base do exercício. Para facilitar a busca e a organização, o `<title>` de cada arquivo HTML é preenchido com o nome exato da aula presente no Notion.
+
+Se eu cometo um erro de sintaxe ou lógica, eu anoto o erro no Notion antes de aplicar a correção aqui. Isso garante que eu não apenas corrija o código, mas aprenda com a falha para evitar repetições.
 
 ---
 
