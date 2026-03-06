@@ -9,8 +9,6 @@ function confirmacaoSimples() {
 
 ativarDispositivo("Lâmpada", confirmacaoSimples);
 
-ativarDispositivo("Alarme", function () {
-  console.log("🚨 Alarme tocando! Atenção!");
-});
+ativarDispositivo("Alarme", () => console.log("🚨 Alarme tocando! Atenção!"));
 
 ativarDispositivo("Câmera", () => console.log("📸 Foto capturada!"));
