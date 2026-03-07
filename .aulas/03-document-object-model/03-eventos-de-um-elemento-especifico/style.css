@@ -1,0 +1,5 @@
+/* Estilos específicos para este exercício podem ser adicionados abaixo */
+.input-error {
+  border: 2px solid red;
+  outline: none;
+}
