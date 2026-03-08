@@ -1,64 +1,61 @@
-// Seleção de elementos
-const input = document.querySelector("#name");
+const textInput = document.querySelector("#username");
 const addBtn = document.querySelector("#add-btn");
 const lockBtn = document.querySelector("#lock-btn");
-const helpIcon = document.querySelector("#help-icon");
+const helpBtn = document.querySelector("#help-icon");
 const helpText = document.querySelector("#help-text");
-const guestList = document.querySelector("#guest-list");
+const ul = document.querySelector("#guest-list");
 
-// 1. Preparação e Feedback de Carregamento
 window.addEventListener("load", () => {
   console.log("Sistema de Check-in pronto!");
-  input.setAttribute("placeholder", "Digite o nome do convidado...");
+  textInput.placeholder = "Digite o nome do convidado...";
 });
 
-// 2. O Botão de Bloqueio (Segurança)
 lockBtn.addEventListener("click", () => {
-  input.setAttribute("disabled", true);
+  textInput.disabled = true;
   lockBtn.style.backgroundColor = "red";
   lockBtn.textContent = "Registro Bloqueado";
 });
 
-// 3. Validação Visual Dinâmica (Exemplo com Toggle)
-helpIcon.addEventListener("click", () => {
-  // Alterna a exibição da mensagem de ajuda
+addBtn.addEventListener("click", () => {
+  if (textInput.value === "") {
+    textInput.classList.add("input-error");
+  } else {
+    textInput.classList.remove("input-error");
+  }
+});
+
+helpBtn.addEventListener("click", () => {
   helpText.classList.toggle("hide");
 });
 
-// Simulação manual de erro (basta descomentar abaixo para testar)
-// input.classList.add("input-error");
-
-// 4. Criação Dinâmica de Convidados
 addBtn.addEventListener("click", (event) => {
-  event.preventDefault(); // Impede o recarregamento da página
+  event.preventDefault();
 
-  // Criando os elementos
-  const newGuest = document.createElement("li");
-  const guestName = document.createElement("span");
+  if (textInput.value !== "") {
+    const li = document.createElement("li");
+    const span = document.createElement("span");
 
-  // Definindo conteúdo e classes
-  guestName.textContent = "Diego Fernandes";
-  newGuest.classList.add("guest");
+    span.textContent = textInput.value;
+    li.classList.add("guest");
 
-  // Montando a estrutura e inserindo no topo (prepend)
-  newGuest.append(guestName);
-  guestList.prepend(newGuest);
+    li.append(span);
+    ul.prepend(li);
+
+    textInput.value = "";
+  }
 });
 
-// 5. Controle de Scroll da Lista
-guestList.addEventListener("scroll", () => {
-  console.log("Distância do topo:", guestList.scrollTop);
+ul.addEventListener("scroll", () => {
+  console.log("Distância do topo:", ul.scrollTop);
 
-  // Desafio de Navegação: Volta ao topo suave se passar de 300px
-  if (guestList.scrollTop > 300) {
-    guestList.scrollTo({
+  if (ul.scrollTop > 300) {
+    ul.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   }
 });
 
-// 6. Identificação de Alvo (Evento Global)
 addEventListener("click", (event) => {
   console.log("Elemento clicado:", event.target);
   console.log("Conteúdo do texto:", event.target.textContent);
